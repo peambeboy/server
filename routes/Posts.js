@@ -10,22 +10,22 @@ router.post('/upload-image', upload.single('image'), async (req, res) => {
       return res.status(400).json({ error: 'No image uploaded' });
     }
 
-    const imageName = req.body.Name || 'Untitled Image'; // รับชื่อรูปภาพจากผู้ใช้หรือใช้ 'Untitled Image' หากไม่ระบุ
-    const imageCategory = req.body.Category || 'Uncategorized'; // รับหมวดหมู่จากผู้ใช้หรือใช้ 'Uncategorized' หากไม่ระบุ
-    const imageDescription = req.body.Detail || 'No description provided'; // รับคำอธิบายรูปภาพจากผู้ใช้หรือใช้ 'No description provided' หากไม่ระบุ
+    const imageName = req.body.name || 'Untitled Image'; // รับชื่อรูปภาพจากผู้ใช้หรือใช้ 'Untitled Image' หากไม่ระบุ
+    const imageCategory = req.body.category || 'Uncategorized'; // รับหมวดหมู่จากผู้ใช้หรือใช้ 'Uncategorized' หากไม่ระบุ
+    const imageDescription = req.body.detail || 'No description provided'; // รับคำอธิบายรูปภาพจากผู้ใช้หรือใช้ 'No description provided' หากไม่ระบุ
     const imageMimeType = req.file.mimetype;
     const imageData = req.file.buffer;
-    const imagePrice = req.body.Price || 0; // รับราคาจากผู้ใช้หรือใช้ 0 หากไม่ระบุ
-    const imageAmount = req.body.Amount || 1; // รับจำนวนจากผู้ใช้หรือใช้ 1 หากไม่ระบุ
+    const imagePrice = req.body.price || 0; // รับราคาจากผู้ใช้หรือใช้ 0 หากไม่ระบุ
+    const imageAmount = req.body.amount || 1; // รับจำนวนจากผู้ใช้หรือใช้ 1 หากไม่ระบุ
 
 
     // บันทึกข้อมูลรูปภาพลงในฐานข้อมูล
     const image = await db.Posts.create({
-      Name: imageName,
-      Category: imageCategory, // กำหนดหมวดหมู่ตามความเหมาะสม
-      Detail: imageDescription, // ใช้คำอธิบายรูปภาพที่ผู้ใช้ระบุ
-      Price: imagePrice, // ราคาที่ผู้ใช้ระบุ
-      Amount: imageAmount, // จำนวนที่ผู้ใช้ระบุ
+      name: imageName,
+      category: imageCategory, // กำหนดหมวดหมู่ตามความเหมาะสม
+      detail: imageDescription, // ใช้คำอธิบายรูปภาพที่ผู้ใช้ระบุ
+      price: imagePrice, // ราคาที่ผู้ใช้ระบุ
+      amount: imageAmount, // จำนวนที่ผู้ใช้ระบุ
       ImageData: imageData,
       ImageMimeType: imageMimeType,
     });

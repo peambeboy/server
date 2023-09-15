@@ -18,11 +18,11 @@ module.exports = (sequelize, DataTypes) => {
       },
       soi: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: true,
       },
       road: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: true,
       },
       subdistrict: {
         type: DataTypes.STRING,
