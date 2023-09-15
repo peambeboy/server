@@ -1,47 +1,50 @@
 module.exports = (sequelize, DataTypes) => {
-    const Usersinfo = sequelize.define("Usersinfo", {
-      name: {
-        type: DataTypes.STRING,
-        allowNull: false,
-      },
-      lastname: {
-        type: DataTypes.STRING,
-        allowNull: false,
-      },
-      tel: {
-        type: DataTypes.STRING,
-        allowNull: false,
-      },
-      addressnumber: {
-        type: DataTypes.STRING,
-        allowNull: false,
-      },
-      soi: {
-        type: DataTypes.STRING,
-        allowNull: true,
-      },
-      road: {
-        type: DataTypes.STRING,
-        allowNull: true,
-      },
-      subdistrict: {
-        type: DataTypes.STRING,
-        allowNull: false,
-      },
-      district: {
-        type: DataTypes.STRING,
-        allowNull: false,
-      },
-      province: {
-        type: DataTypes.STRING,
-        allowNull: false,
-      },
-      postcode: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-      },
-    });
-  
-    return Usersinfo;
-  };
-  
+  const Usersinfo = sequelize.define("Usersinfo", {
+    email: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    name: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    lastname: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    tel: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    addressnumber: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    soi: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    road: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    subdistrict: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    district: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    province: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    postcode: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+    },
+  });
+
+  return Usersinfo;
+};
